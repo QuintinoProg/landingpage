@@ -1,0 +1,120 @@
+
+.header-inner {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: rgb(248, 243, 243);
+    background-color: #2E8B57;
+    border-radius: 10px;
+    height: 50px;
+    font-size: 30px;
+    margin: 0;
+    padding: 30px;
+}
+
+.main-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: white;
+    height: 30px;
+    font-size: 20px;  
+    margin: 5px;  
+    padding: 10px;       
+}
+
+.main-nav a:hover{
+     background-color: rgba(54, 43, 114, 0.363);
+     color:rgb(15, 51, 150);  
+     
+}
+
+.faixa-inicial{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    border-radius: 10px;
+    background-color: rgba(59, 165, 94, 0.753);
+    height: 400px;
+    color: aliceblue;
+}
+
+.hero-text {
+    text-align: center;
+    margin-bottom: 200px;
+}
+
+.orcamento {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.container-sobre{
+    display: flex;
+    padding: 20px;
+    
+}
+
+.foto-prof{
+  margin: 20px;
+    
+}
+
+.servicos-lista h2{
+    padding: 20px;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    border-radius: 10px;
+    background-color: rgb(59, 165, 94);
+    padding: 50px;
+    height: 30px;
+    color: white;
+    margin: 20px;
+}
+
+.beneficios{
+    
+    border: 2px solid #2E8B57; 
+    padding: 10px;    
+    text-align: center;         
+    display: flex;  
+    flex-direction: column;
+    width: 700px;
+    border-radius: 10px;
+    margin: 0 auto;       
+}
+
+.contato-form{
+    padding: 20px;
+    
+}
+
+.contato-info{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    border-radius: 10px;
+    background-color: rgb(59, 165, 94);
+    margin: 10px;
+    padding: 20px;
+    height: 200px;
+    color: aliceblue;
+}
+
+
+.footer{
+    display: flex;
+    justify-content: center;
+    background-color: rgba(99, 218, 182, 0.548);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+}
+
