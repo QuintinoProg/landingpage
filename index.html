@@ -1,131 +1,90 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thiago Quintino - músico</title>
-
-    <!-- CSS principal -->
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="public/assets/css/global.css">
-    <link rel="stylesheet" href="public/assets/fonts/fonts.css">
+    <title>@thiagoquintinopiano</title>
 </head>
+
 <body>
-    <header class="site-header">
-        <div class="header-inner">
-            <h2 class="logo">Thiago Quintino</h2>
-        </div>
-        <div class="main-nav">
-            <nav>
-                <a href="#sobre">Sobre</a>
-                <a href="#servicos">Serviços</a>
-                <a href="#vantagens">Vantagens</a>
-                <a href="#contato">Contato</a>
-            </nav>
-        </div>
+    <header>
+        <h1>Thiago Quintino</h1>
+        <h2>Músico e Professor</h2>
     </header>
-
     <main>
-        <!-- FAIXA 1: Hero / Apresentação -->
-        <section id="inicio" class="faixa-inicial">
-            <div class="container hero-inner">
-                <div class="hero-text">
-                    <h1>Aprenda música com método prático e divertido</h1>
-                    <p>Profissional com 10+ anos de experiência — aulas presenciais e online para todas as idades.</p>
-                    <a href="#contato" class="btn primary">Peça um orçamento</a>
-                </div>
-                <div class="hero-image">
-                    <img class="orcamento" src="public/assets/images/orcamento.png" alt="ícone orçamento">
-                </div>
-            </div>
+        <section> <!--INTRODUÇÃO-->
+            <h3>Sobre mim</h3>
+            <p>Thiago Quintino, pianista e tecladista é Bacharel em Música pela <abbr
+                    title="Universidade Federal de Minas Gerais">UFMG</abbr> com habilitação em Piano Erudito.</p>
+            <p>Desde 2012 atua como <em>instrutor de piano/teclado e músico freelancer.</em></p><br>
+            <p>Integra o “Duo Queixada” (piano e trompete), projeto de música instrumental brasileira
+                ao lado de Gleisson Queiroz e a banda “Bia Nogueira & a Carta”, que lançou seu 1º álbum em 2018,
+                intitulado “Diversas”.</p>
+        </section>
+        <img class="img1" src="assets/Thiago Quintino, Orq. Ímpar.jpg" alt="foto Thiago Quintino, pianista">
+        <section> <!--LINKS-->
+            <h3>Links</h3>
+            <a class="btn" href="https://www.youtube.com/ttquin" target="_blank" rel="noopener noreferrer">YOUTUBE</a>
+            <a class="btn" href="https://www.instagram.com/thiagoquintinopiano/?__d=1%2B" target="_blank"
+                rel="noopener noreferrer">INSTAGRAM</a>
+            <a class="btn" href="https://www.fiemg.com.br/sesi-cultura/cursos/detalhe/piano/" target="_blank"
+                rel="noopener noreferrer">SESI</a>
+        </section>
+        <section> <!--FORMS-->
+            <h2>Área do aluno</h2><br>
+            <form id="form-aluno" action="obrigado.html">
+                <fieldset>
+                    <legend>Dados pessoais</legend><br>
+                    <label for="nomeAluno">Nome</label>
+                    <div>
+                        <input type="text" id="nomeAluno" name="nomeAluno" required>
+                    </div>
+
+                    <label for="idadeAluno">Idade</label>
+                    <div>
+                        <input type="number" id="idadeAluno" name="idadeAluno" required>
+                    </div>
+
+                    <label for="emailAluno">Email</label>
+                    <div>
+                        <input type="email" id="emailAluno" name="emailAluno" required>
+                    </div>
+                </fieldset><br>
+
+                <fieldset>
+                    <legend>Qual o seu nível no piano/teclado?</legend>
+                    <div class="grupo-radio">
+                        <div> <input type="radio" value="Iniciante" id="p1a" name="pergunta1">
+                            <label for="p1a">Iniciante</label>
+                        </div>
+
+                        <div><input type="radio" value="Intermediário" id="p1b" name="pergunta1">
+                            <label for="p1b">Intermediário</label>
+                        </div>
+
+                        <div><input type="radio" value="Avançado" id="p1c" name="pergunta1">
+                            <label for="p1c">Avançado</label>
+                        </div>
+                    </div>
+                </fieldset><br>
+
+                <h3>Você já fez aulas antes?</h3>
+                <label for="experienciaAluno">Conte um pouco da sua experiência:</label>
+                <input type="text" id="experienciaAluno" name="pergunta2" size="100"
+                    placeholder="Ex: fiz aulas por 2 anos..." required>
+                <button type="submit">Cadastrar</button>
+                <!--<p class="mensagem">-->
+            </form><br>
+            <div id="area-mensagem"></div>
         </section>
 
-        <!-- FAIXA 2: Sobre -->
-        <section id="sobre" class="sobre">
-            <div class="container-sobre">
-                <div class="sobre-text">
-                    <h2>Sobre mim</h2>
-                    <p>Sou Thiago, músico e professor.</p>
-                    <p>Atuo em ensino musical, teoria aplicada à prática, e preparação para apresentações.</p>
-                    <ul>
-                        <li>10 anos de experiência</li>
-                        <li>Aulas personalizadas</li>
-                        <li>Material incluso</li>
-                    </ul>
-                </div>
-                <div class="sobre-image">
-                    <img class="foto-prof" src="public/assets/images/foto-prof.jpg" alt="foto do professor">
-                </div>
-            </div>
-        </section>
-
-        <!-- FAIXA 3: Serviços / Aulas -->
-        <section id="servicos" class="servicos">
-            <div class="servicos-lista">
-                <h2>Serviços</h2>
-                <div class="servicos-grid">
-                    <article class="card">
-                        <h3>Aulas de Piano</h3>
-                        <p>Iniciante ao avançado, teoria aplicada e repertório.</p>
-                    </article>
-                    <article class="card">
-                        <h3>Teoria e Harmonia</h3>
-                        <p>Leitura, harmonia funcional e improvisação.</p>
-                    </article>
-                    <article class="card">
-                        <h3>Preparação para vestibular de música</h3>
-                        <p>Estudo do repertório presente nos editais.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- FAIXA 4: Vantagens / Benefícios -->
-        <section id="vantagens" class="vantagens">
-            <div class="beneficios">
-                <h2>Por que escolher minhas aulas?</h2>
-                <div class="vantagens-list">
-                    <div class="vantagem">10 anos de experiência em escolas de música e aulas particulares.</div>
-                    <div class="vantagem">Aulas online com estrutura para melhor aproveitamento e aulas presenciais em sua casa.</div>
-                    <div class="vantagem">Flexibilidade de horários e promoções para mensalistas.</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- FAIXA 5: Contato -->
-        <section id="contato" class="contato">
-            <div class="container contato-inner">
-                <div class="contato-form">
-                    <h2>Peça um orçamento</h2>
-                    <form id="formContato" action="#" method="post">
-                        <label>Nome
-                            <input type="text" name="nome" required>
-                        </label>
-                        <label>Email
-                            <input type="email" name="email" required>
-                        </label>
-                        <label>Telefone
-                            <input type="tel" name="telefone" required>
-                        </label>
-                        <label>Mensagem
-                            <textarea name="mensagem" rows="5" required></textarea>
-                        </label>
-                        <button type="submit" class="btn primary">Enviar</button>
-                    </form>
-                </div>
-                <div class="contato-info">
-                    <h3>Entre em contato:</h3>
-                    <p>WhatsApp: <a href="https://wa.me/55119XXXXXXXX">+55 (11) 98888-9999</a></p>
-                    <p>Atendimento: Seg a Sex, 9h às 18h</p>
-                </div>
-            </div>
-        </section>
+        <!--<button id="teste">Clique aqui</button>-->
     </main>
-
-    <footer class="site-footer">
-        <div class="footer">
-            <p>© 2025 Thiago Quintino — Professor de Música</p>
-        </div>
-    </footer>
+    <footer><a href="https://www.youtube.com/c/bosontreinamentos" target="_blank" rel="noopener noreferrer">Boson
+            Treinamentos - Tecnologia</a></footer>
+    <script src="script.js"></script>
 </body>
+
 </html>
