@@ -41,6 +41,58 @@ h2 {
 
 h3 {
     margin-bottom: 10px;
+    padding-left: 20px;
+}
+
+.intro {
+    text-align: justify;
+    font-size: 16px;
+    line-height: 1.6;
+    padding: 10px 20px;
+}
+
+form fieldset {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+form legend {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 0 8px;
+}
+
+form input[type="text"],
+form input[type="number"],
+form input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+form input:focus {
+    outline: none;
+    border-color: goldenrod;
+    box-shadow: 0 0 4px rgba(218, 165, 32, 0.4);
+}
+
+.dados-nome-idade {
+    display: flex;
+    gap: 20px;
+}
+
+.dados-nome-idade div:first-child {
+    flex: 1;
+}
+
+.dados-nome-idade div:last-child {
+    width: 100px;
 }
 
 .btn {
@@ -129,12 +181,26 @@ footer a {
 
 }
 
+@media (max-width: 600px) {
+    .pagina-obrigado h1 {
+        font-size: 24px;
+    }
+}
+
+.pagina-obrigado h1 {
+    font-size: 32px;
+    text-align: center;
+    padding: 20px;
+}
+
 .pagina-obrigado {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    text-align: center;
 }
+
 
 .mensagem {
     color: seagreen;
