@@ -16,12 +16,15 @@
     <main>
         <section> <!--INTRODUÇÃO-->
             <h3>Sobre mim</h3>
-            <p>Thiago Quintino, pianista e tecladista é Bacharel em Música pela <abbr
-                    title="Universidade Federal de Minas Gerais">UFMG</abbr> com habilitação em Piano Erudito.</p>
-            <p>Desde 2012 atua como <em>instrutor de piano/teclado e músico freelancer.</em></p><br>
-            <p>Integra o “Duo Queixada” (piano e trompete), projeto de música instrumental brasileira
-                ao lado de Gleisson Queiroz e a banda “Bia Nogueira & a Carta”, que lançou seu 1º álbum em 2018,
-                intitulado “Diversas”.</p>
+            <div class="intro">
+                <p>Thiago Quintino, pianista e tecladista é Bacharel em Música pela <abbr
+                        title="Universidade Federal de Minas Gerais">UFMG</abbr> com habilitação em Piano Erudito.
+                    <em>Atua como músico profissional, professor de piano e teclado e músico freelancer desde 2012,
+                    em Belo Horizonte/MG</em>. Ao longo de sua trajetória, desenvolveu experiência tanto na música erudita
+                    quanto na música popular, trabalhando com diferentes formações e projetos musicais.
+                    Como professor, busca adaptar as aulas aos objetivos e ao nível de cada aluno, combinando prática,
+                    teoria musical e desenvolvimento técnico.</p>
+            </div>
         </section>
         <img class="img1" src="assets/Thiago Quintino, Orq. Ímpar.jpg" alt="foto Thiago Quintino, pianista">
         <section> <!--LINKS-->
@@ -37,14 +40,16 @@
             <form id="form-aluno" action="obrigado.html">
                 <fieldset>
                     <legend>Dados pessoais</legend><br>
-                    <label for="nomeAluno">Nome</label>
-                    <div>
-                        <input type="text" id="nomeAluno" name="nomeAluno" required>
-                    </div>
+                    <div class="dados-nome-idade">
+                        <div>
+                            <label for="nomeAluno">Nome</label>
+                            <input type="text" id="nomeAluno" name="nomeAluno" required>
+                        </div>
 
-                    <label for="idadeAluno">Idade</label>
-                    <div>
-                        <input type="number" id="idadeAluno" name="idadeAluno" required>
+                        <div>
+                            <label for="idadeAluno">Idade</label>
+                            <input type="number" id="idadeAluno" name="idadeAluno" required>
+                        </div>
                     </div>
 
                     <label for="emailAluno">Email</label>
