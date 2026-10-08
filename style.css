@@ -114,6 +114,10 @@ form input:focus {
     transform: scale(1.06);
 }
 
+.mensagem {
+    padding-top: 10px;
+}
+
 .mensagem-erro {
     color: red;
 }
@@ -199,12 +203,6 @@ footer a {
     align-items: center;
     height: 100vh;
     text-align: center;
-}
-
-
-.mensagem {
-    color: seagreen;
-    padding-top: 10px;
 }
 
 .img1 {

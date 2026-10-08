@@ -4,23 +4,23 @@ const form = document.querySelector("#form-aluno");
 function validarDados(nomeAluno, idadeAluno, emailAluno, nivel, experiencia) {
 
     if (nomeAluno.trim() === "") {
-        return false;
+        return "nome";
     }
 
     if (idadeAluno < 8) {
-        return false;
+        return "idade";
     }
 
     if (emailAluno.trim() === "") {
-        return false;
+        return "email";
     }
 
     if (!nivel) {
-        return false;
+        return "nivel";
     }
 
     if (experiencia.trim() === "") {
-        return false;
+        return "experiencia";
     }
 
     return true;
@@ -35,6 +35,11 @@ form.addEventListener("submit", function (event) {
     // limpa mensagem anterior
     const areaMensagem = document.querySelector("#area-mensagem");
     areaMensagem.innerHTML = "";
+
+    // PREPARA MSG VALIDAÇÃO
+    const mensagem = document.createElement("p");
+    mensagem.classList.add("mensagem");
+    areaMensagem.appendChild(mensagem);
 
     // CAPTURA DOS DADOS
     const nomeAluno = document.querySelector("#nomeAluno").value;
@@ -53,15 +58,13 @@ form.addEventListener("submit", function (event) {
     );
 
     // SE NÃO FOR VÁLIDO, PARA AQUI
-    if (!dadosValidos) {
-        return;
+    if (dadosValidos === "idade") {
+        mensagem.textContent = "Você precisa ter no mínimo 8 anos.";
+        mensagem.classList.add("mensagem-erro");
+    return;       
+      
     }
-
-    // PREPARA A MENSAGEM
-    const mensagem = document.createElement("p");
-    mensagem.classList.add("mensagem");
-    areaMensagem.appendChild(mensagem);
-
+   
     // PROCESSAMENTO
     if (nivel.value === "Iniciante") {
         mensagem.textContent = "Cadastro realizado! Você está começando a sua jornada.";
@@ -82,3 +85,5 @@ form.addEventListener("submit", function (event) {
     }, 2000);
 
 });
+
+ 
