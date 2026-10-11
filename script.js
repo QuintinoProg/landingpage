@@ -26,6 +26,9 @@ function validarDados(nomeAluno, idadeAluno, emailAluno, nivel, experiencia) {
     return true;
 }
 
+// CRIA ARRAY
+const alunos = [];
+
 // EVENTO DE SUBMIT: quando usuário clica em cadastrar
 form.addEventListener("submit", function (event) {
 
@@ -61,16 +64,34 @@ form.addEventListener("submit", function (event) {
     if (dadosValidos === "idade") {
         mensagem.textContent = "Você precisa ter no mínimo 8 anos.";
         mensagem.classList.add("mensagem-erro");
-    return;       
-      
+        return;
+
     }
-   
+
+    // CRIA OBJETO ALUNO
+    const aluno = {
+        nome: nomeAluno,
+        idade: idadeAluno,
+        email: emailAluno,
+        nivel: nivel.value
+    };
+
+    // ENVIA OBJETO ALUNO PARA ARRAY ALUNOS
+    alunos.push(aluno);
+
+    // CONSULTA DO ARRAY ALUNOS
+    for (let i = 0; i < alunos.length; i++) {
+        console.log(alunos[i].nome);
+        console.log(alunos[i].nivel);
+    }
+
+
     // PROCESSAMENTO
-    if (nivel.value === "Iniciante") {
+    if (aluno.nivel === "Iniciante") {
         mensagem.textContent = "Cadastro realizado! Você está começando a sua jornada.";
         mensagem.classList.add("mensagem-sucesso");
 
-    } else if (nivel.value === "Intermediário") {
+    } else if (aluno.nivel === "Intermediário") {
         mensagem.textContent = "Cadastro realizado! Ótimo, você já tem uma base de conhecimento.";
         mensagem.classList.add("mensagem-sucesso");
 
@@ -86,4 +107,3 @@ form.addEventListener("submit", function (event) {
 
 });
 
- 
