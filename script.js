@@ -79,12 +79,19 @@ form.addEventListener("submit", function (event) {
     // ENVIA OBJETO ALUNO PARA ARRAY ALUNOS
     alunos.push(aluno);
 
-    // CONSULTA DO ARRAY ALUNOS
-    for (let i = 0; i < alunos.length; i++) {
-        console.log(alunos[i].nome);
-        console.log(alunos[i].nivel);
-    }
 
+    // CONSULTA DO ARRAY ALUNOS + EXIBIÇÃO NA TELA
+    const listaAlunos = document.querySelector("#lista-alunos");
+    listaAlunos.textContent = "";
+
+    for (let i = 0; i < alunos.length; i++) {
+        const paragrafo = document.createElement("p");
+
+        paragrafo.textContent =
+            alunos[i].nome + " — Nível: " + alunos[i].nivel;
+
+        listaAlunos.appendChild(paragrafo);
+    }
 
     // PROCESSAMENTO
     if (aluno.nivel === "Iniciante") {
@@ -101,9 +108,9 @@ form.addEventListener("submit", function (event) {
     }
 
     // REDIRECIONAMENTO
-    setTimeout(() => {
+    /*setTimeout(() => {
         window.location.href = "obrigado.html";
-    }, 2000);
+    }, 2000); */
 
 });
 
