@@ -46,7 +46,7 @@ form.addEventListener("submit", function (event) {
 
     // CAPTURA DOS DADOS
     const nomeAluno = document.querySelector("#nomeAluno").value;
-    const idadeAluno = document.querySelector("#idadeAluno").value;
+    const idadeAluno = Number(document.querySelector("#idadeAluno").value);
     const emailAluno = document.querySelector("#emailAluno").value;
     const nivel = document.querySelector('input[name="pergunta1"]:checked');
     const experiencia = document.querySelector("#experienciaAluno").value;
@@ -80,7 +80,7 @@ form.addEventListener("submit", function (event) {
     alunos.push(aluno);
 
 
-    // CONSULTA DO ARRAY ALUNOS + EXIBIÇÃO NA TELA
+    /* CONSULTA DO ARRAY ALUNOS + EXIBIÇÃO NA TELA
     const listaAlunos = document.querySelector("#lista-alunos");
     listaAlunos.textContent = "";
 
@@ -91,26 +91,26 @@ form.addEventListener("submit", function (event) {
             alunos[i].nome + " — Nível: " + alunos[i].nivel;
 
         listaAlunos.appendChild(paragrafo);
-    }
+} */
 
     // PROCESSAMENTO
     if (aluno.nivel === "Iniciante") {
-        mensagem.textContent = "Cadastro realizado! Você está começando a sua jornada.";
-        mensagem.classList.add("mensagem-sucesso");
+    mensagem.textContent = "Cadastro realizado! Você está começando a sua jornada.";
+    mensagem.classList.add("mensagem-sucesso");
 
-    } else if (aluno.nivel === "Intermediário") {
-        mensagem.textContent = "Cadastro realizado! Ótimo, você já tem uma base de conhecimento.";
-        mensagem.classList.add("mensagem-sucesso");
+} else if (aluno.nivel === "Intermediário") {
+    mensagem.textContent = "Cadastro realizado! Ótimo, você já tem uma base de conhecimento.";
+    mensagem.classList.add("mensagem-sucesso");
 
-    } else {
-        mensagem.textContent = "Cadastro realizado! Excelente, vamos aprofundar seus conhecimentos.";
-        mensagem.classList.add("mensagem-sucesso");
-    }
+} else {
+    mensagem.textContent = "Cadastro realizado! Excelente, vamos aprofundar seus conhecimentos.";
+    mensagem.classList.add("mensagem-sucesso");
+}
 
-    // REDIRECIONAMENTO
-    /*setTimeout(() => {
-        window.location.href = "obrigado.html";
-    }, 2000); */
+// REDIRECIONAMENTO
+setTimeout(() => {
+    window.location.href = "obrigado.html";
+}, 2000);
 
 });
 
