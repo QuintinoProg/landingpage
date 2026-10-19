@@ -79,7 +79,7 @@ form input[type="email"] {
 form input:focus {
     outline: none;
     border-color: goldenrod;
-    box-shadow: 0 0 4px rgba(218, 165, 32, 0.4);
+    box-shadow: 0 0 0 3px rgba(218, 165, 32, 0.3);
 }
 
 .dados-nome-idade {
@@ -115,15 +115,22 @@ form input:focus {
 }
 
 .mensagem {
-    padding-top: 10px;
+    padding: 12px;
+    margin-top: 16px;
+    border-radius: 6px;
+    font-size: 16px;
 }
 
 .mensagem-erro {
-    color: red;
+    color: #721c24;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
 }
 
 .mensagem-sucesso {
-    color: green;
+    color: #155724;
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
 }
 
 input[type="radio"] {

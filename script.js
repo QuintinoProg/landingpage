@@ -95,22 +95,25 @@ form.addEventListener("submit", function (event) {
 
     // PROCESSAMENTO
     if (aluno.nivel === "Iniciante") {
-    mensagem.textContent = "Cadastro realizado! Você está começando a sua jornada.";
-    mensagem.classList.add("mensagem-sucesso");
+        mensagem.textContent = "Cadastro realizado! Você está começando a sua jornada.";
+        mensagem.classList.add("mensagem-sucesso");
 
-} else if (aluno.nivel === "Intermediário") {
-    mensagem.textContent = "Cadastro realizado! Ótimo, você já tem uma base de conhecimento.";
-    mensagem.classList.add("mensagem-sucesso");
+    } else if (aluno.nivel === "Intermediário") {
+        mensagem.textContent = "Cadastro realizado! Ótimo, você já tem uma base de conhecimento.";
+        mensagem.classList.add("mensagem-sucesso");
 
-} else {
-    mensagem.textContent = "Cadastro realizado! Excelente, vamos aprofundar seus conhecimentos.";
-    mensagem.classList.add("mensagem-sucesso");
-}
+    } else {
+        mensagem.textContent = "Cadastro realizado! Excelente, vamos aprofundar seus conhecimentos.";
+        mensagem.classList.add("mensagem-sucesso");
+    }
 
-// REDIRECIONAMENTO
-setTimeout(() => {
-    window.location.href = "obrigado.html";
-}, 2000);
+    // LIMPA O FORMULÁRIO APÓS O CADASTRO
+    form.reset();
+
+    // REDIRECIONAMENTO
+    setTimeout(() => {
+        window.location.href = "obrigado.html";
+    }, 2000);
 
 });
 
