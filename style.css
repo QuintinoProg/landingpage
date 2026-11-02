@@ -219,3 +219,7 @@ footer a {
     margin: 20px auto;
     border-radius: 10px;
 }
+
+#resposta-api {
+    white-space: pre-line;
+}

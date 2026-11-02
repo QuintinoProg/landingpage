@@ -26,8 +26,13 @@ function validarDados(nomeAluno, idadeAluno, emailAluno, nivel, experiencia) {
     return true;
 }
 
-// CRIA ARRAY
-const alunos = [];
+// VERIFICA LOCALSTORAGE E CRIA ARRAY (preenchido ou não)
+const dadosSalvos = localStorage.getItem("alunos");
+
+const alunos = dadosSalvos ? JSON.parse(dadosSalvos) : [];
+
+// CONSULTA LISTA AO CARREGAR O SITE
+carregarAlunos();
 
 // EVENTO DE SUBMIT: quando usuário clica em cadastrar
 form.addEventListener("submit", function (event) {
@@ -76,8 +81,61 @@ form.addEventListener("submit", function (event) {
         nivel: nivel.value
     };
 
+    // ENVIA O ALUNO PARA A API
+    fetch("http://localhost:3000/alunos", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(aluno)
+    })
+        .then(resposta => {
+            return resposta.json().then(dados => {
+                if (!resposta.ok) {
+                    throw new Error(dados.mensagem);
+                }
+
+                return dados;
+            });
+        })
+        .then(dados => {
+            console.log(dados.mensagem);
+
+            // PROCESSAMENTO
+            if (aluno.nivel === "Iniciante") {
+                mensagem.textContent = "Cadastro realizado! Você está começando a sua jornada.";
+                mensagem.classList.add("mensagem-sucesso");
+
+            } else if (aluno.nivel === "Intermediário") {
+                mensagem.textContent = "Cadastro realizado! Ótimo, você já tem uma base de conhecimento.";
+                mensagem.classList.add("mensagem-sucesso");
+
+            } else {
+                mensagem.textContent = "Cadastro realizado! Excelente, vamos aprofundar seus conhecimentos.";
+                mensagem.classList.add("mensagem-sucesso");
+            }
+
+            // ATUALIZA LISTA APÓS NOVO CADASTRO
+            carregarAlunos();
+
+            // LIMPA O FORMULÁRIO APÓS O CADASTRO
+            form.reset();
+
+            // REDIRECIONAMENTO
+            setTimeout(() => {
+                window.location.href = "obrigado.html";
+            }, 2000);
+
+        })
+        .catch(erro => {
+            console.error("Erro ao cadastrar aluno:", erro);
+        });
+
     // ENVIA OBJETO ALUNO PARA ARRAY ALUNOS
-    alunos.push(aluno);
+    /*alunos.push(aluno);*/
+
+    // ARMAZENA ARRAY NO NAVEGADOR
+    /*localStorage.setItem("alunos", JSON.stringify(alunos));*/
 
 
     /* CONSULTA DO ARRAY ALUNOS + EXIBIÇÃO NA TELA
@@ -93,27 +151,39 @@ form.addEventListener("submit", function (event) {
         listaAlunos.appendChild(paragrafo);
 } */
 
-    // PROCESSAMENTO
-    if (aluno.nivel === "Iniciante") {
-        mensagem.textContent = "Cadastro realizado! Você está começando a sua jornada.";
-        mensagem.classList.add("mensagem-sucesso");
-
-    } else if (aluno.nivel === "Intermediário") {
-        mensagem.textContent = "Cadastro realizado! Ótimo, você já tem uma base de conhecimento.";
-        mensagem.classList.add("mensagem-sucesso");
-
-    } else {
-        mensagem.textContent = "Cadastro realizado! Excelente, vamos aprofundar seus conhecimentos.";
-        mensagem.classList.add("mensagem-sucesso");
-    }
-
-    // LIMPA O FORMULÁRIO APÓS O CADASTRO
-    form.reset();
-
-    // REDIRECIONAMENTO
-    setTimeout(() => {
-        window.location.href = "obrigado.html";
-    }, 2000);
-
 });
+
+// CONSULTA à API
+function carregarAlunos() {
+
+    const respostaAPI = document.querySelector("#resposta-api");
+
+    fetch("http://localhost:3000/alunos")
+        .then(resposta => {
+            return resposta.json().then(dados => {
+                if (!resposta.ok) {
+                    throw new Error(dados.mensagem);
+                }
+
+                return dados;
+            });
+        })
+
+        // [NOVO PARÂMETRO] recebe o array retornado pela API
+        .then(lista_alunos => {
+            respostaAPI.textContent = "";
+
+            // [MÉTODO] percorre cada elemento do array
+            lista_alunos.forEach(aluno => {
+                respostaAPI.textContent +=
+                    aluno.nome + " — " + aluno.nivel + "\n";
+            });
+        })
+
+        .catch(erro => {
+            respostaAPI.textContent = erro.message;
+            console.error(erro.message);
+        });
+}
+
 
